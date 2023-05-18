@@ -3,8 +3,10 @@ let lineas = [];
 function setup(){
   createCanvas(windowHeight, windowHeight);
   background(200);
+  
+  let cant = random(4 , 8);
 
-  for(let i = 0; i< 10; i++){
+  for(let i = 0; i< cant ; i++){
     lineas.push( new Curvas() );
   }
   for(let i = 0; i < lineas.length; i++){

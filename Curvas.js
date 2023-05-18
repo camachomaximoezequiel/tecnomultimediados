@@ -9,6 +9,13 @@ class Curvas{
         this.yinicial = random(height);
         this.yfinal = random(height);
 
+        //Curvas del medio
+
+        this.xinicialm = random(width); 
+        this.xfinalm = random(width);
+        this.yinicialm = -10;
+        this.yfinalm = height +10;
+
         // Generar puntos de control random
 
         this.cx1 = random(width);
@@ -18,22 +25,65 @@ class Curvas{
 
         this.lineas = lineas;
         
-        this.colorLinea = color(random(255), random(255), random(255));
+        this.colorLinea = color(random(255), random(255), random(255), 25);
 
         //Dar un desplazamiento máximo dme los puntos de control 
         this.maxOffsetX = width;
         this.maxOffsetY = height;
-
         
+
     }
 
     dibujar(){
+
         stroke(this.colorLinea);
-        strokeWeight(20);
+        strokeWeight(25);
         for(let i = 0; i <this.lineas.length; i++ ){
-           
+
             noFill();
             bezier(this.xinicial, this.yinicial, this.cx1,this.cy1, this.cx2, this.cy2, this.xfinal, this.yfinal);
+        }
+
+        stroke(this.colorLinea);
+        strokeWeight(15);
+
+        for(let i = 0; i <this.lineas.length; i++ ){
+
+            noFill();
+            bezier(this.xinicial, this.yinicial, this.cx1,this.cy1, this.cx2, this.cy2, this.xfinal, this.yfinal);
+        }
+
+        stroke(this.colorLinea);
+        strokeWeight(6);
+
+        for(let i = 0; i <this.lineas.length; i++ ){
+
+            noFill();
+            bezier(this.xinicial, this.yinicial, this.cx1,this.cy1, this.cx2, this.cy2, this.xfinal, this.yfinal);
+        }
+
+        //-------------------CURVAS DEL MEDIO------------------------
+
+        stroke(this.colorLinea);
+        strokeWeight(25);
+        for(let i = 0; i <this.lineas.length; i++ ){
+
+            noFill();
+            bezier(this.xinicialm, this.yinicialm, this.cx1,this.cy1, this.cx2, this.cy2, this.xfinalm, this.yfinalm);
+        }
+        stroke(this.colorLinea);
+        strokeWeight(15);
+        for(let i = 0; i <this.lineas.length; i++ ){
+
+            noFill();
+            bezier(this.xinicialm, this.yinicialm, this.cx1,this.cy1, this.cx2, this.cy2, this.xfinalm, this.yfinalm);
+        }
+        stroke(this.colorLinea);
+        strokeWeight(6);
+        for(let i = 0; i <this.lineas.length; i++ ){
+
+            noFill();
+            bezier(this.xinicialm, this.yinicialm, this.cx1,this.cy1, this.cx2, this.cy2, this.xfinalm, this.yfinalm);
         }
         
     }
@@ -43,6 +93,7 @@ class Curvas{
         this.cx1 = mouseX;
         this.cy1 = mouseY;
 
+
         const offsetX = map(mouseX, 0,width, -this.maxOffsetX, this.maxOffsetX);
         const offsetY = map(mouseY, 0, height, -this.maxOffsetY, this.maxOffsetY);
         
@@ -50,7 +101,7 @@ class Curvas{
 
         this.cx2 = this.cx1 - offsetX;
         this.cy2 = this.cy1 - offsetY;
-        
+
         //Limitar la posicion de cx2 y cy2 dentro de los límites de la pantalla
 
         this.cx2 = constrain(this.cx2,0,width);
