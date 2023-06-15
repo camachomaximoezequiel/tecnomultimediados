@@ -1,10 +1,16 @@
-//Link al video explicativo --------------------->
+//Link al video explicativo ---------------------> https://youtu.be/7EXeqLFlTGA
 
 // Configuracion
 
 let AMP_MIN = 0.02;     // Minimo sonido
 
 let AMP_MAX = 0.1;      // Maximo Sonido
+
+
+
+// Contador
+let timeLimit = 0;
+let countDown;
 
 // Microfono
 
@@ -15,20 +21,17 @@ let mic;
 let amp;      // Cargar amplitud "volumen" del microfono
 let haySonido = false;
 
-// Imprimir
-
-let IMPRIMIR = false;
-
-
 let lineas = [];
 
 function setup(){
 
+  
   createCanvas(800, 600);
   background(200);
   
 
   let cant = random(6 , 8);
+
 
   for(let i = 0; i< cant ; i++){
     lineas.push( new Curvas() );
@@ -52,26 +55,18 @@ function setup(){
 function draw(){
 
   background(200);
-
   amp= mic.getLevel();
   haySonido = amp > AMP_MIN;
-  
-  if (haySonido){
-    for(let i = 0; i < lineas.length; i++){
-      
-      lineas[i].movimiento();
-    }
-  }
-  
-  
-  for(let i = 0; i < lineas.length; i++){
-    lineas[i].dibujar();
+
+  let currentTime = int(millis() / 1000);
+  countDown = timeLimit - currentTime;
+
+  if(countDown < 0){
+    
+    reiniciar();
     
   }
-
-  if(IMPRIMIR){
-    printData();
-  }
+  
   
 }
 
@@ -88,4 +83,17 @@ function draw(){
     pop();
   }
 
+  function reiniciar(){
+    
+    push();
+    
+    for(let i = 0; i < lineas.length; i++){
+      lineas[i].dibujar();
+      lineas[i].movimiento();
+    }
+    
+    
+    pop();
+    
+  }
   
