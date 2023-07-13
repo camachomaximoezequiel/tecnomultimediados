@@ -11,14 +11,14 @@ class Curvas{
         this.xinicial = random(-800, 400);
         this.xfinal = random (400, -600);
         this.yinicial = -1300;
-        this.yfinal = 900;
+        this.yfinal = 950;
 
         //Curvas II
 
         this.xinicialm = random(400, 1200); 
         this.xfinalm = random(400, 1200);
         this.yinicialm = -1500;
-        this.yfinalm = random(910, 1100);
+        this.yfinalm = random(950, 1100);
 
     
         
@@ -72,14 +72,14 @@ class Curvas{
          this.xinicial = random(-800, 400);
          this.xfinal = random (400, -600);
          this.yinicial = -1300;
-         this.yfinal = 900;
+         this.yfinal = 950;
  
          //Curvas II
  
          this.xinicialm = random(400, 1200); 
          this.xfinalm = random(400, 1200);
          this.yinicialm = -1500;
-         this.yfinalm = random(910, 1100);
+         this.yfinalm = random(950, 1100);
 
          this.elegircolor= floor(random(0,13));
 

@@ -40,7 +40,7 @@ let c = 12;
 
 function setup(){
 
-  createCanvas(700,800);
+  createCanvas(700,900);
   background(200);
   
 
