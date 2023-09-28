@@ -2,6 +2,8 @@
 
 class Gameplay {
   
+  
+
   Escenario escenario;
   
   Gameplay () {
@@ -93,7 +95,7 @@ class Gameplay {
   
 
   
-  line(cx, cy, cx + averageFlow_x * 10, cy + averageFlow_y * 10);
+  //line(cx, cy, cx + averageFlow_x * 10, cy + averageFlow_y * 10);
   
   
 
@@ -118,7 +120,7 @@ class Gameplay {
  
  
   emisor.actualizar();
-  emisor.dibujar();
+  //emisor.dibujar();
  }
  
    
@@ -147,6 +149,7 @@ void contactStarted(FContact contacto) {
     insertarAnillo(cuerpo2);
     vidasJugador ++;
     dibujarDiamante();
+    tiempo4 = 4;
     
     }
   }
@@ -156,7 +159,7 @@ void contactStarted(FContact contacto) {
     insertarAnillo(cuerpo2);
     vidasJugador --;
     dibujarDiamante();
-    tiempo3 = 3;
+    tiempo3 = 4;
     
     }
   }
@@ -166,7 +169,7 @@ void contactStarted(FContact contacto) {
     insertarAnillo(cuerpo2);
     vidasJugador --;
     dibujarDiamante();
-    tiempo3 = 3;
+    tiempo3 = 4;
     
     }
   }
@@ -176,7 +179,7 @@ void contactStarted(FContact contacto) {
     insertarAnillo(cuerpo2);
     vidasJugador --;
     dibujarDiamante();
-    tiempo3 = 3;
+    tiempo3 = 4;
     
     }
   }
@@ -186,7 +189,7 @@ void contactStarted(FContact contacto) {
     insertarAnillo(cuerpo2);
     vidasJugador --;
     dibujarDiamante();
-    tiempo3 = 3;
+    tiempo3 = 4;
     
     }
   }
