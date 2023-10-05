@@ -44,6 +44,9 @@ import processing.sound.*;
   PImage imagen_diamante;
   PImage imagen_mano;
   PImage imagen_fondo;
+  PImage imagen_inicio;
+  PImage imagen_ganar;
+  PImage imagen_perder;
   
   Pantalla pantalla;
 

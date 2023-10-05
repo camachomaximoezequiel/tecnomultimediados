@@ -8,6 +8,7 @@ class Gameplay {
   
   Gameplay () {
     
+    SoundFile musicaEmpujar;
     imagen_anillo = loadImage("anillo.png");
     imagen_diamante = loadImage("diamante.png");
     imagen_mano = loadImage("mano.png");

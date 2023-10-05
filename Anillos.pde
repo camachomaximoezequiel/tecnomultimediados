@@ -1,6 +1,6 @@
 void dibujarAnillos(){
   
-  for(int i = 0; i < 15; i = i+1){
+  for(int i = 0; i < 11; i = i+1){
     
     FCircle circulo = new FCircle(40);
     
@@ -10,7 +10,7 @@ void dibujarAnillos(){
     circulo.setName("circulo_" + nf(i,1));
     circulo.setFriction(1);
     circulo.setDensity(1);
-    circulo.setRestitution(0.5);
+    circulo.setRestitution(1.1);
     circulo.attachImage(imagen_anillo);
     mundo.add(circulo);
 }
@@ -27,7 +27,7 @@ void dibujarDiamante(){
     circulo.setName("diamante");
     circulo.setFriction(1);
     circulo.setDensity(1);
-    circulo.setRestitution(0.5);
+    circulo.setRestitution(1.1);
     circulo.attachImage(imagen_diamante);
     mundo.add(circulo);
 }
