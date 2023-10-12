@@ -1,14 +1,15 @@
-  
+
 
 class Gameplay {
   
-  
-
+  SoundFile musicaAnillos; 
   Escenario escenario;
   
   Gameplay () {
     
-    SoundFile musicaEmpujar;
+    
+    
+    
     imagen_anillo = loadImage("anillo.png");
     imagen_diamante = loadImage("diamante.png");
     imagen_mano = loadImage("mano.png");
@@ -76,6 +77,9 @@ class Gameplay {
  
   
   void draw () {
+  
+  
+  
     
   receptor.actualizar(mensajes);
     
@@ -124,13 +128,10 @@ class Gameplay {
   //emisor.dibujar();
  }
  
-   
-    
- 
- 
- 
 }
 
+
+  
 void contactStarted(FContact contacto) {
   
 
@@ -150,7 +151,7 @@ void contactStarted(FContact contacto) {
     insertarAnillo(cuerpo2);
     vidasJugador ++;
     dibujarDiamante();
-    tiempo4 = 4;
+    tiempo4 = 3;
     
     }
   }
@@ -195,4 +196,64 @@ void contactStarted(FContact contacto) {
     }
   }
   
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_0")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_0")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_1")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_1")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_2")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_2")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_3")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_3")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_4")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_4")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_5")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_5")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_6")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_6")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_7")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_7")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_7")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_8")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_7")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_9")) ) {
+    musicaAnillos.play ();
+    }
+  }
+  if (cuerpo1.getName() != null && cuerpo2.getName() != null) {
+    if ((cuerpo1.getName().equals("diamante")  && cuerpo2.getName().equals("circulo_7")  )  ||  (cuerpo2.getName().equals("diamante")  && cuerpo1.getName().equals("circulo_10")) ) {
+    musicaAnillos.play ();
+    }
+  }
 }

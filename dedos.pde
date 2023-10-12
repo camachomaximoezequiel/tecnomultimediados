@@ -8,6 +8,7 @@ void dibujarCorazon(){
   dedos.setGrabbable(false);
   mundo.add(dedos);
   dedos.setNoStroke();
+  dedos.setFill(255, 0);
 
 }
 
@@ -21,6 +22,7 @@ void dibujarAnular(){
   dedos.setGrabbable(false);
   mundo.add(dedos);
   dedos.setNoStroke();
+  dedos.setFill(255, 0);
 
 }
 
@@ -34,7 +36,7 @@ void dibujarIndice(){
   dedos.setGrabbable(false);
   mundo.add(dedos);
   dedos.setNoStroke();
-
+  dedos.setFill(255, 0);
 }
 
 void dibujarMeñique(){
@@ -47,6 +49,7 @@ void dibujarMeñique(){
   dedos.setGrabbable(false);
   mundo.add(dedos);
   dedos.setNoStroke();
+  dedos.setFill(255, 0);
 
 }
 
@@ -60,6 +63,7 @@ void dibujarPulgar(){
   dedos.setGrabbable(false);
   mundo.add(dedos);
   dedos.setNoStroke();
+  dedos.setFill(255, 0);
   
   
 

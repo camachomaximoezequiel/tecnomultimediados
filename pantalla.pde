@@ -3,12 +3,19 @@ class Pantalla {
   Gameplay gameplay;
   SoundFile musicaGameplay, musicaGanar, musicaPerder;
 
-  PFont fuente;
+  //PFont fuente;
   int estadoID;
+  
+  //PImage[] by = new PImage[6];
+  //int z = 0;
   
 
 
   Pantalla (PApplet s) {
+    
+    for( int k = 0 ; k < by.length ; k++ ){
+    by[k] = loadImage( "by"+k+".png" );
+  }
     
     
     gameplay = new Gameplay ();
@@ -20,6 +27,7 @@ class Pantalla {
     musicaGameplay = new SoundFile (s, "musicadefondo.mp3");
     musicaGanar = new SoundFile (s, "musicaganar.mp3");
     musicaPerder = new SoundFile (s, "musicaperder.mp3");
+    
 
     //fuente = loadFont ("Impact-48.vlw");
 
@@ -37,10 +45,13 @@ class Pantalla {
     fill(255);
     background (0);
     image( imagen_inicio, 0, 0);
+    image( by[z], 280, 75 );
+    byContador();
     vidasJugador = 1;
     
-    
-    
+    if( z == by.length )
+    z = 0;
+          
     //textFont(fuente);
     
     contador2 ();
@@ -52,6 +63,7 @@ class Pantalla {
       estadoID = 1;
       
       musicaGameplay.play ();
+      musicaGameplay.amp(0.60);
       tiempo2 = 10;
       tiempo = 30;
     }
@@ -66,11 +78,15 @@ class Pantalla {
      
     
     fill (255, 0, 128);
-    textos ("Tiempo", 30, 700, 50);
-    text (tiempo, 700, 80);
+    //textos ("Tiempo", 30, 700, 50);
+    //text (tiempo, 700, 80);
     
-    textos ("Diamante", 30, 80, 50);
-    text (vidasJugador, 80, 80);
+    //textos ("Diamante", 30, 80, 50);
+    //text (vidasJugador, 80, 80);
+    
+    if(tiempo < 20){
+      musicaGameplay.rate(1.05);
+    }
     
     if(tiempo < 10){
       musicaGameplay.rate(1.1);
@@ -85,6 +101,12 @@ class Pantalla {
     background (40, 0, 0);
     //textFont (fuente);
     image( imagen_perder, 0, 0);
+    
+    image( by[z], 280, 115 );
+    byContador();
+    
+    if( z == by.length )
+    z = 0;
     
     //textos ("Perdiste!", 52, width/2, height/4);
     //textos ("Creado por: Lara Aimone, Fiorella Bisello y Camacho Maximo Ezequiel", 20, width/2, 200);
@@ -111,6 +133,11 @@ class Pantalla {
     background(0, 40, 0);
     //textFont (fuente);
     image( imagen_ganar, 0, 0);
+    image( ganar[y], 0, 0 );
+    ganarContador();
+    
+    if( y == ganar.length )
+    y = 0;
     
     //textos ("Ganaste!", 52, width/2, height/4);
     //textos ("Creado por: Lara Aimone, Fiorella Bisello y Camacho Maximo Ezequiel", 20, width/2, 200);
@@ -138,13 +165,13 @@ class Pantalla {
       musicaGameplay.stop ();
       tiempo2 = 10;
       tiempo = 30;
-      
+      d = 0;
     }
   }
 
   void ganar () {
     if ( vidasJugador == 2 ) {
-      tiempo4 = 4;
+      tiempo4 = 3;
       estadoID = 3;
       
       musicaGanar.play ();
@@ -152,10 +179,14 @@ class Pantalla {
       musicaGameplay.stop ();
       tiempo2 = 10;
       tiempo = 30;
+      d = 0;
+      y = 0;
     }
   }
 
   void draw () {
+    
+    
     
     if (estadoID == 0) {
       pantallaInicial () ;
@@ -189,6 +220,18 @@ class Pantalla {
       estadoID = 0;
       
       musicaGanar.stop ();
+    }
+  }
+  
+  void byContador () {
+    if (frameCount % 15 == 0) {
+      z++;
+    }
+  }
+  
+  void ganarContador () {
+    if (frameCount % 5 == 0) {
+      y++;
     }
   }
   
